@@ -1,0 +1,11 @@
+---
+layout: default
+navigation_enabled: false
+pagegroup: __blog
+---
+
+<h1 class="post-title">{{page.title}}</h1>
+{%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+<aside class="posted">Published {{ page.date | date: date_format }}</aside>
+
+{{content}}

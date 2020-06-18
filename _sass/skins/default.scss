@@ -1,0 +1,132 @@
+/*
+ * Default skin for the site. Copy this file and edit the values to
+ * create your own skin.
+ */
+
+/**********************************************************************/
+/* Fonts                                                              */
+/**********************************************************************/
+
+@import url(
+	'https://fonts.googleapis.com/css2?family=Merriweather:wght@300;900&family=Lato:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap'
+);
+
+/*
+ * Font used in most places.
+ */
+$default-font: 'Merriweather', serif;
+
+/*
+ * Font used in the site title.
+ */
+$site-title-font: 'Merriweather', serif;
+
+/*
+ * Font used in the header.
+ */
+$header-font: "Lato", sans-serif;
+
+/*
+ * Font used in unimportant added information (such as the dates on
+ * blog posts, image captions, etc).
+ */
+$aside-font: "Lato", sans-serif;
+
+/*
+ * Font used for code snippets.
+ */
+$code-font: "Source Code Pro", monospace;
+
+/*
+ * Font used in table headings and cells.
+ */
+$table-header-font: 'Merriweather', serif;
+$table-cell-font: "Lato", sans-serif;
+
+/**********************************************************************/
+/* Header                                                             */
+/**********************************************************************/
+
+/*
+ * Body background style. Can be configured as a gradient, or a single
+ * color.
+ */
+$body-background: linear-gradient(90deg, rgba(0,92,191,1) 0%, rgba(27,148,195,1) 86%);
+
+/*
+ * Seam style. This is the separator line between the header and the
+ * content. Set $header-seam to "none".
+ */
+$header-seam: 2px dashed #FFF;
+
+/*
+ * Avatar aura color. The ring of colour around the avatar photo if
+ * you have specified an Avatar.
+ */
+$avatar-aura-color: #FFF;
+
+/*
+ * Color of the text in the header content.
+ */
+$header-text-color: #FFF;
+
+/*
+ * Boldness of the sub-title font. This is the section where your
+ * site description sits.
+ */
+$subtitle-font-weight: 400;
+
+/*
+ * Color of the active link in the navigation menu.
+ * Set to the same as $header-text-color
+ */
+$selected-navigation-color: #FFD70D;
+
+/*
+ * Style of the horizontal lines that separate header navigation links.
+ * Change the style here, or disable entirely with "none".
+ */
+$header-separator: 2px solid #E0FFFC;
+
+/*
+ * Color of the social media icons present in the header.
+ */
+$social-media-icon-color: #EEE;
+
+/*
+ * Color of the "Hamburger Menu" when viewing the page on a mobile
+ * device.
+ */
+$hamburger-menu-color: #FFF;
+
+/**********************************************************************/
+/* Content Area                                                       */
+/**********************************************************************/
+
+/*
+ * Color of the page title (the <h1></h1> tag at the top of each page.
+ */
+$title-color: #FFA200;
+$title-underline-color: #01807B;
+
+/*
+ * The color of the regular text in the page.
+ */
+$text-color: #333;
+
+/*
+ * The color of headings in the page.
+ */
+$heading-color: #0050A6;
+
+/*
+ * Color for visited/unvisited hyperlinks in the page content.
+ */
+$link-unvisited-color: #0CB0E8;
+$link-visited-color: #0CB0E8;
+
+/*
+ * Table styling.
+ */
+$table-border-style: 3px solid #BBB;
+$table-cell-border-style: 1px solid #BBB;

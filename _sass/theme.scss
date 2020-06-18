@@ -1,0 +1,474 @@
+/** Oceanic Theme **/
+
+$avatar-border-width: $avatar-width + 16px;
+$avatar-border-height: $avatar-height + 16px;
+$max-content-width: 1024px;
+$max-sidebar-width: 360px;
+$max-sidebar-element-width: 205px;
+
+/**********************************************************************/
+/**                           Core Styles                            **/
+/**********************************************************************/
+body {
+	align-items: stretch;
+	color: $text-color;
+	display: flex;
+	font-family: $default-font;
+	font-size: 14pt;
+	margin: 0;
+	min-height: 100vh;
+	background: $body-background;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+	color: $heading-color;
+	font-family: $default-font;
+}
+h1 {
+	border-bottom: 1px solid $title-underline-color;
+	color: $title-color;
+	font-size: 36pt;
+	font-weight: 100;
+	text-align: center;
+}
+h2 {
+	margin-top:1.5em;
+}
+
+/* Hyperlinks */
+a {
+	color: $link-unvisited-color;
+}
+a:visited {
+	color: $link-visited-color;
+}
+
+/**********************************************************************/
+/**                       Page Left/Right Side                       **/
+/**********************************************************************/
+
+body > header,
+body >.hires-padding {
+	border-right: $header-seam;
+	padding: 50px 20px;
+	width: 25%;
+	min-width: $max-sidebar-element-width;
+	max-width: $max-sidebar-width;
+}
+
+body > .hires-padding {
+	border-left: $header-seam;
+	display: none;
+}
+
+/**********************************************************************/
+/**                           Page Header                            **/
+/**********************************************************************/
+
+/* Force all header text to the same color. */
+body > header,
+body > header a,
+body > header a:visited,
+body > header h1,
+body > header h2 {
+	font-family: $header-font;
+	color: $header-text-color;
+	text-decoration: none;
+}
+body > header h1,
+body > header h2 {
+	border: 0;
+	display: block;
+	margin: 0.5em auto auto auto;
+	max-width: $max-sidebar-element-width;
+	text-align: center;
+}
+body > header h1 {
+	font-family:$site-title-font;
+	font-size:120%;
+	font-weight: 900;
+}
+body > header h2 {
+	font-family: $header-font;
+	font-size:100%;
+	font-weight:$subtitle-font-weight;
+}
+
+/* Avatar Image */
+body > header .avatar-wrap {
+	margin: 0 auto;
+	width: $avatar-border-width;
+	height: $avatar-border-height;
+	overflow: visible;
+	background: radial-gradient(circle, $avatar-aura-color 62%, #0000 65%);
+}
+body > header .avatar-wrap > .avatar {
+	position: relative;
+	top: 8px;
+	left: 8px;
+	width: $avatar-width;
+	height: $avatar-height;
+	background-image: $avatar-img;
+	border-radius:50%;
+}
+
+body > header input,
+body > header label {
+	display: none;
+}
+
+/* Navigation */
+body > header nav ul {
+	letter-spacing: 2px;
+	list-style: none;
+	margin-top:40px;
+	padding: 0;
+}
+body > header nav li {
+	border-bottom: $header-separator;
+	display: block;
+	margin: 0 auto;
+	padding: 0.5em 0;
+	text-align: center;
+	width: $max-sidebar-element-width;
+}
+body > header label svg {
+	stroke: $hamburger-menu-color;
+}
+
+body > header nav .current a {
+	color: $selected-navigation-color;
+}
+body > header nav li:first-child {
+	border-top: $header-separator;
+}
+
+/* Social Media Links */
+body > header .social-icons {
+	margin: 40px auto 0 auto;
+	text-align: center;
+	width: $max-sidebar-element-width;
+}
+body > header .social-icons ul {
+	list-style: none;
+	padding: 0;
+}
+body > header .social-icons li {
+	display: inline;
+	padding: 5px;
+}
+body > header .social-icons svg {
+	height: 24px;
+	width: 24px;
+}
+
+body > header .social-icons svg {
+	fill: $social-media-icon-color;
+}
+
+/**********************************************************************/
+/**                           Content Area                           **/
+/**********************************************************************/
+
+body > .content-area {
+	vertical-align:top;
+	flex: 1 1;
+	margin: 0 0 0 0;
+	background: #FFF;
+	padding: 20px;
+}
+main {
+	max-width:1024px;
+	margin: 0 auto;
+}
+
+body > .content-area > footer {
+	color: #BBB;
+	font-family: $aside-font;
+	font-size: 0.7em;
+	text-align: center;
+	margin-top: 2em;
+}
+
+
+/**********************************************************************/
+/**                        Multi-Column List                         **/
+/**********************************************************************/
+
+.multi-column-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+.multi-column-list article {
+	border: 1px solid #CCC;
+	display: block;
+	padding: 0 2% 10px 2%;
+	width: 45%;
+}
+
+/**********************************************************************/
+/**                            Blog Posts                            **/
+/**********************************************************************/
+
+ol.blog-entries {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ol.blog-entries li {
+	padding: 0;
+	margin: 1em 0 0 0;
+	border-top:2px solid #999;
+}
+ol.blog-entries > li:first-child {
+	border-top: none;
+}
+
+ol.blog-entries h3 {
+	margin-bottom: 0.4em;
+}
+
+ol.blog-entries h3 a {
+	color: $heading-color;
+	text-decoration: none;
+}
+
+ol.blog-entries aside,
+aside.posted {
+	color: #666;
+	font-family: $aside-font;
+	font-size: 0.7em;
+}
+
+ul.pages {
+	display: block;
+	list-style: none;
+	text-align: center;
+}
+
+ul.pages li {
+	/*
+	 * Falling back to Noto Sans JP font here since it supports the
+	 * unicode characters we need for navigation.
+	 */
+	font-family: "Noto Sans JP", Helvetica, sans-serif;
+	color: #AAA;
+	display: inline-block;
+	font-size: 1em;
+	vertical-align: middle;
+	margin: 0 10px;
+}
+
+ul.pages li a {
+	color: $text-color;
+	text-decoration: none;
+}
+
+h1.post-title {
+	margin-bottom:0.25em;
+}
+
+aside.posted {
+	text-align: center;
+	margin-bottom:1em;
+}
+
+/**********************************************************************/
+/**                         Text Formatting                          **/
+/**********************************************************************/
+
+/* Code Snippets */
+code {
+	font-family: $code-font;
+}
+.highlight > pre {
+	margin: 1.5em 50px;
+	padding: 4px 8px;
+}
+
+/* Styles for Rouge-generated table when line numbers are enabled. */
+.rouge-table {
+	border: 0;
+	margin: 0;
+}
+.rouge-table pre {
+	font-size: 0.8em;
+	padding: 0 8px;
+}
+.rouge-table td {
+	border: 0;
+	padding: 0;
+}
+
+blockquote {
+	border: 2px solid #AAA;
+	border-top: none;
+	border-bottom: none;
+	border-radius: 10px;
+	padding: 10px 15px;
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+/**********************************************************************/
+/**                              Tables                              **/
+/**********************************************************************/
+
+table {
+	margin: 1.5em 0 0 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+	border: $table-border-style;
+
+}
+table td,
+table th {
+	border: $table-cell-border-style;
+	padding:4px 8px;
+	text-align: left;
+}
+table th {
+	font-family: $table-header-font;
+	font-size: 0.9em;
+}
+table td {
+	font-family: $table-cell-font;
+	font-size: 0.9em;
+}
+
+/**********************************************************************/
+/**                             Figures                              **/
+/**********************************************************************/
+
+figure {
+	margin:1.5em auto;
+	display: block;
+	text-align:center;
+}
+
+figure figcaption {
+	margin-top:0.5em;
+	color: #666;
+	font-family: $aside-font;
+	font-size:0.8em;
+}
+
+/**********************************************************************/
+/**                    Small Screen Optimization                     **/
+/**********************************************************************/
+
+@media screen and (max-width: 768px) {
+
+	/******************************************************************/
+	/**                         Orientation                          **/
+	/******************************************************************/
+	body {
+		flex-direction: column;
+	}
+
+	body > header,
+	main {
+		width: unset;
+		max-width:unset;
+	}
+
+	/******************************************************************/
+	/**                         Page Header                          **/
+	/******************************************************************/
+
+	body > header {
+		padding: 20px 0 0 0;
+		border-right: none;
+	}
+	body > header > .profile-area {
+		display: flex;
+	}
+	body > header .avatar-wrap {
+		margin: 0 0 20px 20px;
+		flex: 0 0 $avatar-border-width;
+	}
+	body > header .header-text-wrap {
+		margin: 0 0 0 20px;
+		vertical-align: middle;
+		flex: 1 1;
+	}
+	body > header .header-text {
+		display: block;
+		padding: 20px;
+	}
+
+	body > header h1 {
+		margin: 0;
+	}
+	body > header h1,
+	body > header h2 {
+		max-width: initial;
+	}
+
+	body > header > label {
+		display: block;
+		padding: 10px 0;
+		text-align: center;
+		border-top: $header-seam;
+		height: 26px;
+	}
+	body > header > label > svg {
+		display: block;
+		margin: auto;
+		height: 26px;
+		width: 75px;
+	}
+
+	body > header nav ul {
+		margin-top: 1em;
+	}
+
+	body > header input ~ .social-icons,
+	body > header input ~ nav {
+		display: none;
+	}
+	body > header input:checked ~ .social-icons,
+	body > header input:checked ~ nav {
+		display: block;
+	}
+
+	body > .content-area {
+		margin: 0;
+		padding-top: 0;
+	}
+	main {
+		border-radius:10px;
+	}
+
+	.project-list {
+		display: block;
+	}
+	.project-list article {
+		display: block;
+		padding: initial;
+		width: initial;
+	}
+
+	/******************************************************************/
+	/**                            Other                             **/
+	/******************************************************************/
+
+	h1 {
+		font-size: 30px;
+		border-bottom: none;
+	}
+}
+
+@media screen and (min-width: 1921px) {
+	body > .hires-padding {
+		display: block;
+		flex: 1 1 $max-sidebar-width;
+		max-width:$max-sidebar-width;
+	}
+
+	body > header {
+		width: 25%;
+	}
+}

@@ -1,0 +1,112 @@
+# Theme. Always "oceanic" if using this theme.
+theme: oceanic
+
+# Your name (or the company name for a company site). This is displayed
+# in the header.
+author:
+  name: "Oceanic"
+
+# A description of you, or of the site. This is displayed in the header.
+description: A minimalist, blue, Jekyll theme.
+
+# Show the first openings of posts when listing. Set to false to just
+# display titles and dates.
+show_excerpts: true
+
+# Custom theme settings. Specify the specific skin or syntax
+# highlighting here.
+oceanic:
+  skin: black
+  code-skin: default
+
+  # If you wish to have a photo or logo in the header, specify the
+  # following values:
+  #
+  # * url - the url (or local path) of the image to use as the avatar
+  #         (default: no avatar).
+  # * width - the width of the image (default: 100px).
+  # * height - the height of the image (default: 100px).
+  #
+  avatar:
+    url: "/assets/img/avatar.jpg"
+    width: "100px"
+    height: "100px"
+
+  # Social media links. If the link is specified, an icon is shown in the
+  # header as a link.
+  social:
+    facebook: https://www.facebook.com/jekyll.user
+    github: https://www.github.com/jekyll.user
+    linkedin: https://www.linkedin.com/in/jekylluser
+    stackoverflow: https://stackoverflow.com/users/00000/stack-user
+    steam: https://steamcommunity.com/id/jekylluser/
+    twitter: https://www.twitter.com/jekylluser
+
+  # If specified, sets the number of blog entries to display from the
+  # homepage. More blog entries can be found by navigating to a
+  # separate post list.
+  homepage_blog_entries: 5
+
+# Pagination settings. The Oceanic template uses jekyll-paginate-v2 to
+# allow pagination of posts.
+pagination:
+  enabled: true
+  debug: false
+  collection: posts
+  per_page: 1
+  permalink: "/page:num/"
+  title: ':title'
+  limit: 0
+  sort_field: date
+  sort_reverse: true
+  category: posts
+  tag: ''
+  locale: ''
+
+# The Oceanic template provides layout support for the jekyll-archives
+# plugin. If you are using it, it can be configured here.
+autopages:
+  enabled: true
+
+  # Category pages, omit entire config element to disable
+  categories:
+    # Optional, the list of layouts that should be processed for every category found in the site
+    layouts:
+      - 'autopage.html'
+    # Optional, the title that each category paginate page should get (:cat is replaced by the Category name)
+    title: 'Posts in category :cat'
+    # Optional, the permalink for the  pagination page (:cat is replaced),
+    # the pagination permalink path is then appended to this permalink structure
+    slugify:
+      mode: 'default'   # :cat is slugified. Modes: default, raw, pretty, ascii, latin
+      case: false       # Whether to replace all uppercase letters with their lowercase counterparts
+
+    layouts:
+      - 'autopage.html'
+
+  tags:
+    layouts:
+      - 'autopage.html'
+
+# Specify the code highlighter. Oceanic is tested against the Rouge
+# syntax highlighter.
+highlighter: rouge
+
+# The Oceanic template provides layout support for the jekyll-archives
+# plugin. If you are using it, it can be configured here.
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layout: archive
+#   permalinks:
+#     year: '/:year/'
+#     month: '/:year/:month/'
+#     day: '/:year/:month/:day/'
+#     tag: '/tag/:name/'
+#     category: '/category/:name/'
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate-v2
+  - jekyll-seo-tag

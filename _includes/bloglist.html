@@ -1,0 +1,68 @@
+{%- if include.postlist.size > 0 and include.postlist.size -%}
+  {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+  <ol class="blog-entries">
+    {%- for post in include.postlist -%}
+      <li role="article">
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        <aside>Published: {{ post.date | date: date_format }}</aside>
+        {{ post.excerpt }}
+        <a href="{{ post.url | relative_url }}">Continue reading...</a></h3>
+      </li>
+    {%- endfor -%}
+  </ol>
+
+  {% if include.paginator and include.paginator.total_pages > 1 %}
+    {%- if page.pagination.permalink -%}
+      {% assign page_permalink = page.pagination.permalink %}
+    {%- else -%}
+      {% assign page_permalink = site.pagination.permalink %}
+    {%- endif -%}
+    {%- comment -%}
+    #
+    # HACK: We need the paginator's base directory in order to provide
+    # page direct links. Unfortunately, there is no particularly easy
+    # way of working out the directory from the include.paginator. For example,
+    # `page.dir` could return '/blog/page2/' on the second paginator
+    # page, which is not the desired directory (we'd actually want
+    # '/blog/'). So generate here using a bit of a hack.
+    #
+    # * On the first page, generation from page.dir is valid.
+    # * On subsequent pages, work out the page-y portion of the URL and
+    #   replace it.
+    #
+    {%- endcomment -%}
+    {%- if 1 == include.paginator.page -%}
+      {%- assign page_path_format = page.dir | append: page_permalink | replace: "//", "/" -%}
+    {%- else -%}
+      {%- assign current_page_subdirectory = page_permalink | replace: ':num', include.paginator.page -%}
+      {%- assign page_path_format = page.dir | remove_first: current_page_subdirectory | append: page_permalink -%}
+    {%- endif -%}
+    <ul class="pages">
+      {%- if include.paginator.previous_page -%}
+        <li><a title="Go to last page" href="{{ include.paginator.first_page_path | relative_url }}">&laquo;</a></li>
+        <li><a title="Go to previous page" href="{{ include.paginator.previous_page_path | relative_url }}">&lsaquo;</a></li>
+      {%- else -%}
+      <li><span title="Go to previous page">&laquo;</span></li>
+      <li><span title="Go to first page">&lsaquo;</span></li>
+      {%- endif -%}
+      {%- for page_number in (1..include.paginator.total_pages) -%}
+        {%- if page_number == include.paginator.page -%}
+          <li><a title="Refresh this page" href="{{ include.paginator.current_page_path }}">&#x25C9;</a></li>
+        {%- elsif page_number == 1 -%}
+          <li><a title="Go to page 1" href="{{ include.paginator.first_page_path | relative_url }}">&#x025CB;</a></li>
+        {%- else -%}
+          <li><a title="Go to page {{page_number}}" href="{{ page_path_format | relative_url | replace: ':num', page_number }}">&#x025CB;</a></li>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- if include.paginator.next_page -%}
+        <li><a title="Go to next page" href="{{ include.paginator.next_page_path | relative_url }}">&rsaquo;</a></li>
+        <li><a title="Go to last page" href="{{ include.paginator.last_page_path | relative_url }}">&raquo;</a></li>
+      {%- else -%}
+        <li><span title="Go to next page">&rsaquo;</span></li>
+        <li><span title="Go to last page">&raquo;</span></li>
+      {%- endif -%}
+    </ul>
+  {%- endif %}
+
+{%- endif -%}

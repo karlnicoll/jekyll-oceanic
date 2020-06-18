@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<h1>{{page.title}}</h1>
+
+{{content}}
+
+{%- comment -%}
+#
+# The code below detects if jekyll-archives is being used, or if
+# the "autopages" feature of jekyll-paginate-v2 is being used.
+#
+{%- endcomment -%}
+{%- if site.jekyll-archives.enabled contains "categories" -%}
+  {%- assign permalink_stub = site.jekyll-archives.permalinks["category"] -%}
+  {%- assign cat_name_placeholder = ":name" -%}
+{%- elsif site.autopages.enabled and site.autopages.categories -%}
+  {%- assign permalink_stub = site.autopages.categories.permalink | default: '/category/:cat/' -%}
+  {%- assign cat_name_placeholder = ":cat" -%}
+{%- else -%}
+  <aside>Error: Unable to detect category index plugin.</aside>
+{%- endif -%}
+
+<h2>Available Categories:</h2>
+
+<ul class="cat-tag-col-list">
+  {% for category in site.categories %}
+    <li>
+      <a href={{ permalink_stub | replace: cat_name_placeholder, category[0] | relative_url }}>
+        {{ category[0] }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,66 @@
+<header>
+  <div class="profile-area">
+    {% if site.oceanic.avatar-url != blank %}
+      <div class="avatar-wrap"><div class="avatar"></div></div>
+    {% endif %}
+    <div class="header-text-wrap">
+      <div class="header-text">
+        <h1>{{ site.author.name }}</h1>
+        <h2>{{ site.description }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="oceanic-theme-display-nav" />
+  <label for="oceanic-theme-display-nav" style="width:100%;">
+    <svg viewBox="0 0 750 260">
+      <use xlink:href="{{ '/assets/img/icons.svg#menu' | relative_url }}"></use>
+    </svg>
+  </label>
+
+  <nav>
+    {%- assign pages = site.pages | where_exp: "item", "item.nav and item.nav.enabled and item.title and item.autogen == nil" | sort "title", "last" -%}
+    <ul>
+      {%- assign: index_page_url = "/" | relative_url -%}
+      <li{% if page.url == "/" %} class="current"{% endif %}><a href="{{ "/" | relative_url }}">Home</a></li>
+      {%- for my_page in pages -%}
+        {%- if my_page.title and "/" != my_page.url -%}
+          {%- if page.url == my_page.url -%}
+             <li class="current">
+          {%- elsif my_page.pagegroup -%}
+            {%- if page.pagegroup -%}
+              {%- if page.pagegroup == my_page.pagegroup -%}
+                <li class="current">
+              {%- else -%}
+                <li>
+              {%- endif -%}
+            {%- elsif layout.pagegroup -%}
+              {%- if layout.pagegroup == my_page.pagegroup -%}
+                <li class="current">
+              {% else %}
+                <li>
+              {% endif %}
+            {% else %}
+              <li>
+            {% endif %}
+          {% else %}
+              <li>
+          {% endif %}
+            <a href="{{ my_page.url | relative_url }}"> {{ my_page.title | escape }}</a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </nav>
+
+  <div class="social-icons">
+    <ul>
+      {%- if site.oceanic.social.facebook -%}<li><a rel="me" href="{{ site.oceanic.social.facebook }}" title="{{ site.author.name | append: " at Facebook" }}"><svg viewBox="0 0 24 24"><use xlink:href="{{ '/assets/img/icons.svg#facebook' | relative_url }}"></use></svg></a></li>{%- endif -%}
+      {%- if site.oceanic.social.twitter -%}<li><a rel="me" href="{{ site.oceanic.social.twitter }}" title="{{ site.author.name | append: " at Twitter" }}"><svg viewBox="0 0 24 24"><use xlink:href="{{ '/assets/img/icons.svg#twitter' | relative_url }}"></use></svg></a></li>{%- endif -%}
+      {%- if site.oceanic.social.linkedin -%}<li><a rel="me" href="{{ site.oceanic.social.linkedin }}" title="{{ site.author.name | append: " at LinkedIn" }}"><svg viewBox="0 0 24 24"><use xlink:href="{{ '/assets/img/icons.svg#linkedin' | relative_url }}"></use></svg></a></li>{%- endif -%}
+      {%- if site.oceanic.social.stackoverflow -%}<li><a rel="me" href="{{ site.oceanic.social.stackoverflow }}" title="{{ site.author.name | append: " at StackOverflow" }}"><svg viewBox="0 0 24 24"><use xlink:href="{{ '/assets/img/icons.svg#stackoverflow' | relative_url }}"></use></svg></a></li>{%- endif -%}
+      {%- if site.oceanic.social.github -%}<li><a rel="me" href="{{ site.oceanic.social.github }}" title="{{ site.author.name | append: " at Github" }}"><svg viewBox="0 0 24 24"><use xlink:href="{{ '/assets/img/icons.svg#github' | relative_url }}"></use></svg></a></li>{%- endif -%}
+      {%- if site.oceanic.social.steam -%}<li><a rel="me" href="{{ site.oceanic.social.steam }}" title="{{ site.author.name | append: " at Steam" }}"><svg viewBox="0 0 24 24"><use xlink:href="{{ '/assets/img/icons.svg#steam' | relative_url }}"></use></svg></a></li>{%- endif -%}
+    </ul>
+  </div>
+</header>

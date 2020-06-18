@@ -1,0 +1,9 @@
+---
+layout: default
+pagegroup: __blog
+---
+
+<h1>Archive of posts with {{ page.type }} '{{ page.title }}'</h1>
+
+{%- assign postlist = page.posts | sort: "date" -%}
+{% include bloglist.html postlist=postlist %}

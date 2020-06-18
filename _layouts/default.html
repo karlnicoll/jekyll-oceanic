@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {%- include head.html -%}
+  <body>
+    {%- include header.html -%}
+    <div class="content-area">
+      <main class="page-content" aria-label="Content" role="main">
+        {{ content }}
+      </main>
+      {%- include footer.html -%}
+    </div>
+    <div class="hires-padding"></div>
+  </body>
+
+</html>

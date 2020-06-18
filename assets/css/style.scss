@@ -1,0 +1,38 @@
+---
+---
+
+/**********************************************************************/
+/**                          Avatar Styles                           **/
+/**********************************************************************/
+
+/* Avatar styles are defined here because we need access to the site
+ * config. They can be overridden in the theme/skin if required, but
+ * not recommended since the values below are user-specified in
+ * _config.yml
+ */
+{% if site.oceanic.avatar.url != blank %}
+	{% if site.oceanic.avatar.url contains '://' %}
+		$avatar-img: url("{{ site.oceanic.avatar.url }}");
+	{% else %}
+		$avatar-img: url("{{ site.oceanic.avatar.url | relative_url }}");
+	{% endif %}
+{% else %}
+	$avatar-img: 'none';
+{% endif %}
+
+{% if site.oceanic.avatar.height != blank %}
+	$avatar-height: {{ site.oceanic.avatar.height }};
+{% else %}
+	$avatar-height: 100px;
+{% endif %}
+
+{% if site.oceanic.avatar.width != blank %}
+	$avatar-width: {{ site.oceanic.avatar.width }};
+{% else %}
+	$avatar-width: 100px;
+{% endif %}
+
+
+@import 'skins/{{site.oceanic.skin | default: "default"}}';
+@import 'code-skins/{{site.oceanic.code-skin | default: "default"}}';
+@import 'theme';
