@@ -72,7 +72,7 @@ The theme can be easily customized by creating *skins*. Skins are
 [Sass](https://sass-lang.com/) files that define colors, fonts, and various
 other style properties that can be adjusted.
 
-See HERE for a brief introduction to skinning.
+See [HERE](SKINNING.md) for a brief introduction to skinning.
 
 ## Contributing
 
