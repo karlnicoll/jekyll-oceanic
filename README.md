@@ -1,5 +1,8 @@
 # Oceanic - A Minimalist, Blue Theme For Jekyll
 
+[![Gem Version](https://badge.fury.io/rb/jekyll-oceanic.svg)](https://badge.fury.io/rb/jekyll-oceanic)
+[![Build Status](https://travis-ci.org/karlnicoll/jekyll-oceanic.svg?branch=master)](https://travis-ci.org/karlnicoll/jekyll-oceanic)
+
 Oceanic is intended as a simple theme for Jekyll websites, with a main focus
 on blogs.
 
