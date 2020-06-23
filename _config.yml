@@ -16,7 +16,7 @@ show_excerpts: true
 # Custom theme settings. Specify the specific skin or syntax
 # highlighting here.
 oceanic:
-  skin: black
+  skin: default
   code-skin: default
 
   # If you wish to have a photo or logo in the header, specify the
