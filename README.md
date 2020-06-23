@@ -36,17 +36,18 @@ gem "jekyll-oceanic"
 Next, add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
-theme: oceanic
+theme: jekyll-oceanic
 ```
 
 Finally, execute:
 
 ```shell
-$ bundle
+$ bundle config set path .bundle
+$ bundle install
 ...
 ```
 
-or install it yourself with:
+or install it system-wide with:
 
 ```shell
 $ gem install jekyll-oceanic
