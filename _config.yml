@@ -68,25 +68,19 @@ pagination:
 autopages:
   enabled: true
 
-  # Category pages, omit entire config element to disable
   categories:
-    # Optional, the list of layouts that should be processed for every category found in the site
+    enabled: true
     layouts:
       - 'autopage.html'
-    # Optional, the title that each category paginate page should get (:cat is replaced by the Category name)
     title: 'Posts in category :cat'
-    # Optional, the permalink for the  pagination page (:cat is replaced),
-    # the pagination permalink path is then appended to this permalink structure
-    slugify:
-      mode: 'default'   # :cat is slugified. Modes: default, raw, pretty, ascii, latin
-      case: false       # Whether to replace all uppercase letters with their lowercase counterparts
-
-    layouts:
-      - 'autopage.html'
 
   tags:
+    enabled: false
     layouts:
       - 'autopage.html'
+
+  collections:
+    enabled: false
 
 # Specify the code highlighter. Oceanic is tested against the Rouge
 # syntax highlighter.
