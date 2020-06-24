@@ -6,8 +6,9 @@ theme: jekyll-oceanic
 author:
   name: "Oceanic"
 
-# A description of you, or of the site. This is displayed in the header.
-description: A minimalist, blue, Jekyll theme.
+# A short description (e.g., A blog dedicated to reviewing cat gifs) of your
+# site.
+tagline: A minimalist, blue, Jekyll theme.
 
 # Show the first openings of posts when listing. Set to false to just
 # display titles and dates.
