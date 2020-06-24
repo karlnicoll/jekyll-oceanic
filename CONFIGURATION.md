@@ -28,11 +28,11 @@ name of the company for a company site. It is configured like this:
 
 The author setting is used by the template as the site title.
 
-### Description Setting
+### Tagline Setting
 
-The description is the value given to the site's sub-title:
+The tagline is the value given to the site's sub-title:
 
-    description: >
+    Tagline: >
       A man of many talents, with relationships, experiences, and human
       emotions
 
