@@ -36,12 +36,12 @@ oceanic:
   # Social media links. If the link is specified, an icon is shown in the
   # header as a link.
   social:
-    facebook: https://www.facebook.com/jekyll.user
-    github: https://www.github.com/jekyll.user
-    linkedin: https://www.linkedin.com/in/jekylluser
-    stackoverflow: https://stackoverflow.com/users/00000/stack-user
-    steam: https://steamcommunity.com/id/jekylluser/
-    twitter: https://www.twitter.com/jekylluser
+    facebook: # https://www.facebook.com/jekyll.user
+    github: # https://www.github.com/jekyll.user
+    linkedin: # https://www.linkedin.com/in/jekylluser
+    stackoverflow: # https://stackoverflow.com/users/00000/stack-user
+    steam: # https://steamcommunity.com/id/jekylluser/
+    twitter: # https://www.twitter.com/jekylluser
 
   # If specified, sets the number of blog entries to display from the
   # homepage. More blog entries can be found by navigating to a
