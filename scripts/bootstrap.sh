@@ -13,4 +13,5 @@ if ! which bundle 1>&2 2>/dev/null; then
 	exit 1
 fi
 
+bundle config set path .bundle
 bundle install
