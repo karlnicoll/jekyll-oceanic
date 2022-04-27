@@ -23,7 +23,7 @@ body {
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
 	color: $heading-color;
-	font-family: $default-font;
+	font-family: $heading-font;
 }
 h1 {
 	border-bottom: 1px solid $title-underline-color;
@@ -33,7 +33,12 @@ h1 {
 	text-align: center;
 }
 h2 {
-	margin-top:1.5em;
+	font-size:20pt;
+	margin-top:1em;
+}
+h3 {
+	font-size:18pt;
+	margin-top:1em;
 }
 
 /* Hyperlinks */
@@ -226,10 +231,12 @@ ol.blog-entries > li:first-child {
 	border-top: none;
 }
 
+ol.blog-entries h2,
 ol.blog-entries h3 {
-	margin-bottom: 0.4em;
+	margin-bottom: 0.3em;
 }
 
+ol.blog-entries h2 a,
 ol.blog-entries h3 a {
 	color: $heading-color;
 	text-decoration: none;

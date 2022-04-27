@@ -3,7 +3,7 @@
   <ol class="blog-entries">
     {%- for post in include.postlist -%}
       <li role="article">
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
         <aside>Published: {{ post.date | date: date_format }}</aside>
         {{ post.excerpt }}
         <a href="{{ post.url | relative_url }}">Continue reading...</a></h3>

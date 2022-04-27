@@ -24,6 +24,7 @@ properties to specify different colors, fonts, and other styles.
     $default-font: serif;
     $site-title-font: serif;
     $header-font: sans-serif;
+    $heading-font: serif;
     $aside-font: sans-serif;
     $code-font: monospace;
     $table-header-font: serif;
