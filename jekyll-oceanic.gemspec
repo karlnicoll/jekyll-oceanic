@@ -23,11 +23,11 @@ Gem::Specification.new do |spec|
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i) }
 
-  spec.add_runtime_dependency "jekyll", "~> 4.1"
-  spec.add_runtime_dependency "jekyll-feed", "~> 0.13"
+  spec.add_runtime_dependency "jekyll", "~> 4.3"
+  spec.add_runtime_dependency "jekyll-feed", "~> 0.17"
   spec.add_runtime_dependency "jekyll-paginate-v2", "3.0"
-  spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.1"
-  spec.add_runtime_dependency "rouge", "3.20"
+  spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.8"
+  spec.add_runtime_dependency "rouge", "4.0"
 
   spec.add_development_dependency "bundler"
 end
