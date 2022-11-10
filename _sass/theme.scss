@@ -63,6 +63,7 @@ body >.hires-padding {
 }
 
 body > .hires-padding {
+	border-right: none;
 	border-left: $header-seam;
 	display: none;
 }
